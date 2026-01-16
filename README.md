@@ -238,12 +238,19 @@ Always include Authorization → Bearer Token
 📦 Installation (Quick Start)
 
 git clone <repo-url>
+
 cd upload_document_with_metadata
+
 python -m venv apivenv
+
 source apivenv/bin/activate
+
 pip install -r requirements.txt
+
 python manage.py migrate
+
 python manage.py runserver
+
 
 👨‍💻 Author
 
