@@ -1,12 +1,15 @@
 from rest_framework import viewsets, permissions
-from .models import UploadDocument, MetadataKey, MetadataChoice
+from .models import UploadDocument, MetadataKey, MetadataChoice, MetadataUpload
 from .serializers import (
     UploadDocumentCreateSerializer,
     UploadDocumentDetailSerializer,
     MetadataKeySerializer,
     MetadataChoiceSerializer,
-    MetadataKeyCreateSerializer
+    MetadataKeyCreateSerializer,
+    MetadataUploadSerializer,
 )
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 
 class MetadataChoiceViewSet(viewsets.ModelViewSet):
@@ -35,3 +38,7 @@ class MetadataKeyViewSet(viewsets.ModelViewSet):
         return MetadataKeySerializer
 
 
+class MetadataUploadViewSet(viewsets.ModelViewSet):
+    queryset = MetadataUpload.objects.all()
+    serializer_class = MetadataUploadSerializer
+    permission_classes = [permissions.IsAuthenticated]

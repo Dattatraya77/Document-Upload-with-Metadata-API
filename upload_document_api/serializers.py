@@ -106,3 +106,10 @@ class MetadataKeyCreateSerializer(serializers.ModelSerializer):
             "metadata_type",
             "metadata_choice"
         ]
+
+
+class MetadataUploadSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = MetadataUpload
+        fields = "__all__"
